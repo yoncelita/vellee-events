@@ -1,18 +1,74 @@
-<div class="container">
-    <h1>Contact Us</h1>
-    <form action="/contact" method="POST">
-        <div class="mb-3">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+<!-- <div class="container" id="contactSection">
+
+    <div class="row">
+        <div class="col-md-6 mb-5 mb-xl-0">
+            <h3 class="h1">Contact us</h3>
+            <p class="mb-5">If you would like to enquire about prices or availability, please fill in the form below:
+            </p>
+            <form action="/contact" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-5">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-contact btn-lg m-0">Send</button>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+
+        <div class="col-md-6">
+            <div class="map-responsive h-100">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.16289834307!2d6.631758816053987!3d45.4073965041467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4789494ff3a3af37%3A0x94738c62135c152e!2s431%20Rue%20du%20Jardin%20Alpin%2C%2073120%20Courchevel%2C%20France!5e0!3m2!1sen!2sbg!4v1728163659421!5m2!1sen!2sbg"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="message" class="form-label">Message:</label>
-            <textarea class="form-control" id="message" name="message" required></textarea>
+
+    </div>
+</div>
+
+</div> -->
+
+
+<div class="container" id="contactSection">
+    <div class="row">
+        <div class="col-md-6 mb-5 mb-xl-0">
+            <h3 class="h1">Contact us</h3>
+            <p class="mb-5">If you would like to enquire about prices or availability, please fill in the form below:</p>
+            <form id="contactForm" action="/contact" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <small id="nameError" class="text-danger d-none">Please enter a valid name (letters only).</small>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <small id="emailError" class="text-danger d-none">Please enter a valid email address.</small>
+                </div>
+                <div class="mb-5">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-contact btn-lg m-0">Send</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-    </form>
+
+        <div class="col-md-6">
+            <div class="map-responsive h-100">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.16289834307!2d6.631758816053987!3d45.4073965041467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4789494ff3a3af37%3A0x94738c62135c152e!2s431%20Rue%20du%20Jardin%20Alpin%2C%2073120%20Courchevel%2C%20France!5e0!3m2!1sen!2sbg!4v1728163659421!5m2!1sen!2sbg"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
 </div>

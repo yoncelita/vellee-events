@@ -1,0 +1,265 @@
+:root {
+    --primary: #5f6b2f;
+    --secondary: #fceddf;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+header.transparent {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Ensure visible background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+h2 {
+    font-weight: 400;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+    color: var(--secondary) !important;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.font-poiret {
+  font-family: 'Poiret One', sans-serif;
+}
+
+.font-pattaya {
+  font-family: 'Pattaya', sans-serif;
+}
+
+main {
+    flex: 1;
+}
+/* 
+.logo {
+    filter: invert(1);
+} */
+
+.logo img {
+    width: 130px;
+    height: auto;
+}
+
+.container {
+    flex: 1;
+}
+
+.display-4 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Poiret One', sans-serif;
+
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-close {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.btn-close:focus,
+.btn-close:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* header.transparent {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.359);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}*/
+
+
+.inner-wrapper {
+  padding-top: 1.25rem;   /* py-5 = 20px */
+  padding-bottom: 1.25rem;
+  max-width: 1280px;       /* xl:container */
+  margin-left: auto;       /* xl:mx-auto */
+  margin-right: auto;
+}
+
+/* Padding on both sides for screens < 1300px or >= 1280px */
+@media (max-width: 1300px), (min-width: 1280px) {
+  .inner-wrapper {
+    padding-left: 1.75rem;  /* px-7 = 28px */
+    padding-right: 1.75rem;
+  }
+}
+
+.hero-section {
+  position: relative;
+  margin-top: 40px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 77px;
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-wrapper {
+    flex-direction: row;
+    min-height: 600px;
+  }
+}
+
+.hero-text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+@media (min-width: 768px) {
+  .hero-text {
+    width: 50%;
+    justify-content: flex-center;
+    padding: 0;
+  }
+}
+
+.hero-text-inner {
+  max-width: 640px;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .hero-text-inner {
+    padding: 0;
+  }
+}
+
+.hero-text h1 {
+  font-size: 1.5rem;
+  color: #1f2937; /* Tailwind's gray-800 */
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+}
+
+.hero-text p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: #4b5563; /* Tailwind's gray-600 */
+}
+
+@media (min-width: 768px) {
+  .hero-text p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-text p {
+    font-size: 1.875rem;
+  }
+}
+
+.hero-image-placeholder {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero-image-placeholder {
+    display: block;
+    width: 50%;
+    height: 600px;
+    position: relative;
+  }
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .hero-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.hide-on-mobile {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hide-on-mobile {
+    display: inline;
+  }
+}
+
+
+.site-footer {
+    background-color: var(--secondary);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-line {
+  width: 60%;
+  height: 1px;
+  background-color: #aaa;
+  margin: 0 auto 10px auto;
+}
