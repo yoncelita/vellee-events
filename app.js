@@ -21,27 +21,17 @@ app.get('/', (req, res) => {
   res.render('layout', { title: 'Home', content: 'home' });
 });
 
-// Facilities & Services page
-app.get('/facilities', (req, res) => {
-  res.render('layout', { title: 'Facilities', content: 'facilities' });
+
+app.get('/thank-you', (req, res) => {
+  res.render('layout', {
+    title: 'Благодарим Ви',
+    content: 'thank-you'
+  });
 });
 
-// Gallery page
-app.get('/gallery', (req, res) => {
-  res.render('layout', { title: 'Gallery', content: 'gallery' });
-});
 
-// Courchevel page
-app.get('/courchevel', (req, res) => {
-  res.render('layout', { title: 'Courchevel', content: 'courchevel' });
-});
 
-// Availability page
-app.get('/availability', (req, res) => {
-  res.render('layout', { title: 'Availability', content: 'availability' });
-});
-
-// Contact page
+// // Contact page
 app.get('/contact', (req, res) => {
     const success = req.query.success;
     const error = req.query.error;
@@ -52,12 +42,6 @@ app.get('/contact', (req, res) => {
       error,
     });
   });
-  
-
-// Thank You page
-app.get('/thank-you', (req, res) => {
-  res.render('layout', { title: 'Thank You', content: 'thank-you' });
-});
 
 
 // Contact form submission
@@ -70,7 +54,7 @@ app.post('/contact', async (req, res) => {
       service: 'Gmail',
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, 
+        pass: process.env.EMAIL_PASS,
       },
       tls: {
         rejectUnauthorized: false,
@@ -80,16 +64,16 @@ app.post('/contact', async (req, res) => {
     // Email options
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: ['yoana.art@gmail.com', 'ignatov.ti@gmail.com'], // Replace with your recipient email
+      to: ['vellee.events@gmail.com'], // Replace with your recipient email
       replyTo: email,
-      subject: `LE SASHA Contact Form from ${name}`,
+      subject: `Запитване във Vellee Events от ${name}`,
       text: `
-      You have a new contact form submission.
+      Имате ново съобщение от сайта
 
-      Name: ${name}
+      Име: ${name}
       Email: ${email}
 
-      Message:
+      Съобщение:
       ${message}
     `,
     };
@@ -100,7 +84,9 @@ app.post('/contact', async (req, res) => {
     await transporter.sendMail(mailOptions);
 
     // Redirect to Thank You page
-    res.redirect('/contact?success=1');
+    // res.redirect('/contact?success=1');
+    res.redirect('/thank-you');
+
   } catch (error) {
     console.error('Error sending email:', error);
     // Redirect back to Contact page with an error query parameter

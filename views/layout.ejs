@@ -15,7 +15,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Pattaya&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -23,22 +23,8 @@
 
     <div class="snow-container"></div>
 
-    <!-- Social icons -->
-    <!-- <div class="social-icons-vertical">
-        <a href="https://facebook.com" class="text-dark" target="_blank">
-            <img src="/images/facebook-icon.svg" alt="facebook" width="35" />
-        </a>
-        <a href="https://instagram.com" class="text-dark" target="_blank">
-            <img src="/images/instagram-icon.svg" alt="instagram" width="35" />
-        </a>
-        <a href="https://wa.me/33685915567" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon"
-                class="whatsapp-icon">
-        </a>
-    </div> -->
-
-
-    <header class="fixed-top transparent" style="width: 100%; z-index: 1030; background-color: white; border-bottom: 1px solid var(--primary);">
+    <header class="fixed-top transparent"
+        style="width: 100%; z-index: 1030; background-color: white; border-bottom: 1px solid var(--primary);">
         <nav class="navbar">
             <div class="container">
                 <a class="logo navbar-brand fw-bold text-dark" href="/">
@@ -55,11 +41,12 @@
                 <!-- Navbar Links (visible on larger screens) -->
                 <div class="d-none d-lg-flex">
                     <ul class="navbar-nav ms-auto flex-row gap-3">
-                        <li class="nav-item"><a class="nav-link" href="/facilities">За нас</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/gallery">Нашите услуги</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/courchevel">Събития</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/availability">Цени</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/contact">Магазин</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">За нас</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Нашите услуги</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#events">Събития</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Запитване</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#pricing">Цени</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#shop">Магазин</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -70,25 +57,31 @@
             aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
 
+                <a class="logo navbar-brand fw-bold text-dark" href="/">
+                    <img src="/images/icons/logo-vellee.svg" alt="logo">
+                </a>
+
                 <h5 class="offcanvas-title invisible" id="offcanvasNavbarLabel">Menu</h5>
                 <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                 <span class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></span>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/facilities">За нас</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/gallery">Нашите услуги</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/courchevel">Събития</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/availability">Цени</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact">Магазин</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">За нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Нашите услуги</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Събития</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Запитване</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#pricing">Цени</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#shop">Магазин</a></li> -->
                 </ul>
+
             </div>
             <div class="offcanvas-footer">
                 <div class="social-icons-horizontal">
-                    <a href="https://facebook.com" class="socials" target="_blank">
+                    <a href="https://www.facebook.com/VelleeStudio" class="socials" target="_blank">
                         <img src="/images/icons/facebook.svg" alt="facebook" width="9" />
                     </a>
-                    <a href="https://instagram.com" class="socials" target="_blank">
+                    <a href="https://www.instagram.com/velleeevents" class="socials" target="_blank">
                         <img src="/images/icons/instagram.svg" alt="instagram" width="20" />
                     </a>
 
@@ -99,11 +92,11 @@
     </header>
 
 
-
-
     <main class="hero-container" data-template="<%= content %>">
         <%- include(content) %>
     </main>
+
+
     <footer class="site-footer">
         <div class="footer-top">
             <h2 class="font-pattaya">За връзка с нас</h2>
@@ -123,93 +116,26 @@
         </div>
 
         <div class="footer-bottom">
-             <div class="footer-line"></div>
+            <div class="footer-line"></div>
             <p>2025 Velleeevents© Всички права запазени!</p>
         </div>
     </footer>
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
 
     <script>
-        const offcanvas = document.getElementById('offcanvasNavbar');
-        const socialIcons = document.querySelector('.social-icons-vertical');
-
-        socialIcons.style.top = `${window.scrollY + window.innerHeight / 2}px`;
-
-
-        offcanvas.addEventListener('show.bs.offcanvas', function () {
-            socialIcons.classList.add('invisible');
-        });
-
-        offcanvas.addEventListener('hide.bs.offcanvas', function () {
-            socialIcons.classList.remove('invisible');
-        });
-
-
-
-        // Scroll header
-        // document.addEventListener('DOMContentLoaded', function () {
-        //     const header = document.querySelector('header');
-        //     const navLinks = document.querySelectorAll('.nav-link');
-        //     const logo = document.querySelector('.logo');
-        //     const hamburger = document.querySelector('.navbar-toggler-icon');
-        //     const main = document.querySelector('main');
-
-        //     const templateType = main.getAttribute('data-template');
-
-        //     window.addEventListener('scroll', function () {
-        //         if (templateType === 'home') {
-        //             if (window.scrollY > 50) {
-        //                 // Scrolled state
-        //                 header.classList.add('scrolled');
-        //                 header.classList.remove('transparent');
-        //                 navLinks.forEach(el => el.style.color = "black");
-        //                 logo.style.filter = "invert(0)";
-        //                 hamburger.style.filter = "invert(0)"
-        //             } else {
-        //                 // Top of the page state
-        //                 header.classList.remove('scrolled');
-        //                 header.classList.add('transparent');
-        //                 navLinks.forEach(el => el.style.color = "white");
-        //                 logo.style.filter = "invert(1)";
-        //                 hamburger.style.filter = "invert(1)"
-        //             }
-        //         } else {
-        //             // For other templates
-        //             header.classList.remove('transparent');
-        //             header.classList.add('scrolled');
-        //             navLinks.forEach(el => el.style.color = "black");
-        //             logo.style.filter = "invert(0)";
-        //             hamburger.style.filter = "invert(0)"
-        //         }
-        //     });
-
-        //     // Initial state when the page loads
-        //     if (templateType !== 'home') {
-        //         header.classList.remove('transparent');
-        //         header.classList.add('scrolled');
-        //         navLinks.forEach(el => el.style.color = "black");
-        //         logo.style.filter = "invert(0)";
-        //         hamburger.style.filter = "invert(0)"
-        //     } else {
-
-        //         if (window.scrollY > 50) {
-        //             hamburger.style.filter = "invert(0)"
-        //         } else {
-        //             hamburger.style.filter = "invert(1)"
-        //         }
-        //     }
-        // });
-
-
-
-
 
         // Slider
-        var swiper = new Swiper('.swiper-container', {
+        new Swiper('.testimonials-swiper', {
             loop: true,
+            centeredSlides: false,
+            spaceBetween: 30,
+            slidesPerView: 1,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
@@ -228,65 +154,28 @@
                 },
                 1024: {
                     slidesPerView: 3,
+                },
+                1440: {
+                    slidesPerView: 3,
                 }
             }
         });
 
 
-        // Gallery
+
         document.addEventListener('DOMContentLoaded', function () {
-            const galleryImages = document.querySelectorAll('.gallery img');
-            const carousel = document.querySelector('#imageCarousel');
+            const offcanvasEl = document.getElementById('offcanvasNavbar');
+            const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
 
-            galleryImages.forEach((img) => {
-                img.addEventListener('click', function () {
-                    const slideIndex = img.getAttribute('data-index');
-
-                    const carouselItems = carousel.querySelectorAll('.carousel-item');
-                    carouselItems.forEach(item => item.classList.remove('active'));
-
-                    carouselItems[slideIndex].classList.add('active');
-
-                    const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
-                    imageModal.show();
-
+            const navLinks = offcanvasEl.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    bsOffcanvas.hide();
                 });
             });
         });
 
 
-        // Prevent from sliding
-        document.addEventListener('DOMContentLoaded', function () {
-            const imageCarouselElement = document.querySelector('#imageCarousel');
-            const imageCarousel = new bootstrap.Carousel(imageCarouselElement, {
-                interval: false,
-                ride: false
-            });
-        });
-
-
-
-
-        // Read more toggle
-        document.addEventListener('DOMContentLoaded', function () {
-            const readMoreToggle = document.querySelector('.read-more-toggle');
-            const extraContent = document.querySelector('.extra-content');
-            const fadeOverlay = document.querySelector('.fade-overlay');
-
-            if (readMoreToggle) {
-                readMoreToggle.addEventListener('click', function () {
-                    if (extraContent.style.display === 'none' || extraContent.style.display === '') {
-                        extraContent.style.display = 'inline';
-                        fadeOverlay.style.display = 'none';
-                        readMoreToggle.innerHTML = 'Read Less <span class="arrow">➔</span>';
-                    } else {
-                        extraContent.style.display = 'none';
-                        fadeOverlay.style.display = 'block';
-                        readMoreToggle.innerHTML = 'Read More <span class="arrow">➔</span>';
-                    }
-                });
-            }
-        });
 
 
         // JavaScript Email Validation
@@ -321,6 +210,7 @@
                 event.preventDefault();
             }
         });
+
 
     </script>
 </body>
