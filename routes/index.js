@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Home page
 router.get('/', (req, res) => {
-    res.render('layout', { title: 'Home', content: 'home' });
+    res.render('layout', { title: 'Vellee Events Studio', content: 'home' });
 });
 
 // Facilities & Services page

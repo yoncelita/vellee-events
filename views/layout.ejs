@@ -4,27 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%- title %>
-    </title>
+    <title>Vellee Events Studio</title>
+        <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon-vellee.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <div class="snow-container"></div>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
 <body>
-
-    <div class="snow-container"></div>
-
     <header class="fixed-top transparent"
         style="width: 100%; z-index: 1030; background-color: white; border-bottom: 1px solid var(--primary);">
+            <div class="top-bar-line font-montserrat">Превръщаме вашия повод в събитие</div>
         <nav class="navbar">
             <div class="container">
                 <a class="logo navbar-brand fw-bold text-dark" href="/">
@@ -99,8 +97,8 @@
 
     <footer class="site-footer">
         <div class="footer-top">
-            <h2 class="font-pattaya">За връзка с нас</h2>
-            <p class="font-poiret" style="font-weight: 700;">+359 883 55 91 54</p>
+            <h2 class="font-cormorant footer-top-heading">За връзка с нас</h2>
+            <p class="font-montserrat" style="font-weight: 700;">+359 883 55 91 54</p>
 
             <div class="footer-socials">
                 <span>Последвайте ни:</span>
@@ -160,6 +158,30 @@
                 }
             }
         });
+
+
+         // Slider
+        new Swiper('.index-swiper', {
+            loop: true,
+            centeredSlides: false,
+            spaceBetween: 0,
+            slidesPerView: 1,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        
+        });
+
+
 
 
 
