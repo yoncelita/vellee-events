@@ -252,6 +252,7 @@ header.scrolled {
     line-height: 1.2;
     font-size: 26px;
     width: 100%;
+    padding: 0 10px;
 }
 
 @media (min-width: 768px) {
@@ -890,7 +891,6 @@ header.scrolled {
 
 .step-number {
     font-size: 11rem;
-    /* smaller so lines stand out more */
     font-weight: bold;
     color: var(--primary);
     font-family: 'Cormorant', serif;
@@ -900,47 +900,38 @@ header.scrolled {
 }
 
 
-.step-number::before,
 .step-number::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    background-color: var(--primary);
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.step:first-child .step-number::after {
     content: none;
 }
 
 @media (min-width: 768px) {
-
-    .step-number::before,
+    .step:first-child .step-number::after,
     .step-number::after {
         content: "";
         position: absolute;
-        top: 50%;
-        width: 120px;
-        /* adjust line length */
+        width: 270px;
         height: 1px;
         background-color: var(--primary);
+        top: 50%;
+        left: 85px;
         transform: translateY(-50%);
     }
 
-    .step-number::before {
-        left: -140px;
-        /* spacing from number */
-    }
-
-    .step-number::after {
-        right: -140px;
-        /* spacing from number */
-    }
-
-    /* Remove left line for first step */
-    .step:first-child .step-number::before {
-        content: none;
-    }
-
-    /* Remove right line for last step */
     .step:last-child .step-number::after {
         content: none;
     }
 }
-
-
 
 
 
