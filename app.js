@@ -22,6 +22,12 @@ app.get('/', (req, res) => {
 });
 
 
+// Pricing page
+app.get('/pricing', (req, res) => {
+  res.render('layout', { title: 'Pricing', content: 'pricing' });
+});
+
+
 app.get('/thank-you', (req, res) => {
   res.render('layout', {
     title: 'Благодарим Ви',
@@ -98,6 +104,7 @@ app.post('/contact', async (req, res) => {
 app.use((req, res) => {
   res.status(404).render('layout', { title: '404 Not Found', content: '404' });
 });
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;

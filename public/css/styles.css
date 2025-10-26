@@ -41,6 +41,10 @@ h2 {
     color: var(--secondary) !important;
 }
 
+.text-bold {
+    font-weight: bold;
+}
+
 html,
 body {
     height: 100%;
@@ -90,7 +94,13 @@ main {
     font-weight: 400;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
+    color: #000;
+    transition: color 0.2s ease;
+}
 
+.nav-link.active {
+    font-weight: 900;
+    color: var(--primary) !important;
 }
 
 .navbar-toggler {
@@ -542,7 +552,7 @@ header.scrolled {
 /* Desktop styles */
 @media (min-width: 768px) {
 
-    .services-section {
+    .pricing-services-section {
         padding: 60px 20px;
     }
 
@@ -1328,4 +1338,210 @@ header.scrolled {
     border-radius: 30px;
     padding: 10px 30px;
     text-decoration: none;
+}
+
+
+/* Pricing Page --------------------------------------------------- */
+
+.pricing-section:first-child {
+    background-color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 77px;
+}
+
+.pricing-section {
+    margin: 20px 0;
+}
+
+.pricing-section hr {
+    margin: 0 !important;
+}
+
+.pricing-section>.inner-wrapper>h5 {
+    color: #333;
+    font-size: 16px;
+}
+
+.pricing-section>.inner-wrapper>h2 {
+    margin-bottom: 24px;
+    width: 65%;
+    text-transform: uppercase;
+}
+
+#beMineSection img,
+#brideSection img,
+#velleeSection img {
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+
+.pricing-section .price-box {
+    background: var(--peach);
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    color: #333;
+}
+
+.pricing-section .price {
+    color: #000;
+    font-weight: 600;
+}
+
+.pricing-section .note {
+    color: #555;
+    max-width: 600px;
+    line-height: 1.5;
+    font-size: 13px;
+    margin-bottom: 50px;
+}
+
+
+@media (min-width: 1280px) {
+
+    .pricing-section {
+        margin: 50px 0;
+    }
+
+    .pricing-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+
+    .pricing-section .col-md-7,
+    .pricing-section .col-md-5 {
+        flex: 1;
+    }
+
+    .pricing-section.col-md-5 {
+        max-width: 40%;
+    }
+
+    .pricing-section .col-md-7 {
+        max-width: 55%;
+    }
+
+    .pricing-section>.inner-wrapper>h2 {
+        color: var(--primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .pricing-section>.inner-wrapper>h5 {
+        color: #333;
+        font-size: 1rem;
+    }
+
+    .pricing-section p {
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    #beMineSection img,
+    #brideSection img,
+    #velleeSection img img {
+        border-radius: 12px;
+        object-fit: cover;
+    }
+}
+
+
+.pricing-services-section {
+    background-color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+}
+
+.pricing-services-section>.inner-wrapper>h2 {
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 10px;
+    width: 85%;
+    text-align: center;
+    display: inline-block;
+}
+
+.pricing-services-section>p {
+    color: #333;
+    line-height: 1.6;
+    width: 85%;
+    text-align: center;
+    display: inline-block;
+}
+
+.services-list {
+    margin-top: 40px;
+    gap: 0;
+}
+
+.service-item {
+    display: flex;
+    transition: transform 0.2s ease;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item:hover {
+    transform: translateY(-4px);
+}
+
+.service-icon {
+    background-color: var(--peach);
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#additionalServices img {
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+.services-note {
+    margin-top: 50px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    color: #555;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.service-text>h5 {
+    font-size: 17px;
+}
+
+/* Desktop layout using min-width */
+@media (min-width: 768px) {
+    .service-item {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        text-align: left;
+        flex-direction: row;
+    }
+
+    .service-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+
 }
