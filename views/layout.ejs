@@ -46,7 +46,7 @@
                         <li class="nav-item"><a class="nav-link" href="/#events">Събития</a></li>
                         <li class="nav-item"><a class="nav-link" href="/pricing">Цени</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contact">Запитване</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="#shop">Магазин</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="/shop">Магазин</a></li>
                     </ul>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                     <li class="nav-item"><a class="nav-link" href="/#events">Събития</a></li>
                     <li class="nav-item"><a class="nav-link" href="/pricing">Цени</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact">Запитване</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#shop">Магазин</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="/shop">Магазин</a></li>
                 </ul>
 
             </div>
@@ -100,7 +100,7 @@
     <footer class="site-footer">
         <div class="footer-top">
             <h2 class="font-cormorant footer-top-heading">За връзка с нас</h2>
-            <p class="font-montserrat" style="font-weight: 700;">+359 883 55 91 54</p>
+            <p class="phone-contact font-montserrat" style="font-weight: 700;">+359 883 55 91 54</p>
 
             <div class="footer-socials">
                 <span>Последвайте ни:</span>
@@ -126,6 +126,22 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+
+            document.querySelectorAll('a[href]').forEach(link => {
+                link.addEventListener('click', e => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+                        e.preventDefault();
+                        document.body.classList.remove('loaded');
+                        setTimeout(() => window.location.href = href, 250);
+                    }
+                });
+            });
+        });
+    </script>
 
 
     <script>
@@ -264,6 +280,15 @@
             }
         });
 
+
+        function changeImage(thumbnail) {
+            const mainImage = document.getElementById('mainImage');
+            const allThumbs = document.querySelectorAll('.thumb');
+
+            allThumbs.forEach(thumb => thumb.classList.remove('active'));
+            thumbnail.classList.add('active');
+            mainImage.src = thumbnail.src;
+        }
 
     </script>
 </body>

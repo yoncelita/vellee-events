@@ -1,4 +1,4 @@
-# Luxury accommodation
+# Vellee Events
 
 A simple Express.js website with routing and EJS views.
 

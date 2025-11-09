@@ -1,0 +1,47 @@
+<section class="shop-section py-5" id="shop">
+  <div class="inner-wrapper container">
+    <div class="row gx-4 gy-5">
+      <% products.forEach(product=> { %>
+        <div class="col-md-4 col-sm-6">
+          <div class="product-card">
+            <div class="shop-product-image">
+              <a href="<%= product.link %>">
+                <img src="<%= product.image %>" alt="<%= product.title %>">
+              </a>
+            </div>
+            <div class="product-body">
+              <h5 class="product-title font-cormorant">
+                <%= product.title %>
+              </h5>
+              <p class="product-desc">
+                <%= product.description %>
+              </p>
+              <p class="product-production">
+                <%= product.production %>
+              </p>
+              <p class="product-price">
+                <%= product.price %>
+              </p>
+              <a href="<%= product.link %>" class="event-button font-montserrat">
+                <%= product.button %> →
+              </a>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="quote-inner">
+    <img src="/images/icons/fireworks-icon.svg" alt="Sparkles Icon" class="quote-icon" />
+    <h2 class="quote-text">Създадено от нас, вдъхновено от вас.</h2>
+    <div class="quote-signature">
+      <span class="dash">—</span>
+      <div class="signature-lines">
+        <img src="/images/icons/logo-vellee.svg" alt="Logo Icon" />
+      </div>
+    </div>
+  </div>
+</section>
