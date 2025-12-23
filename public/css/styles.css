@@ -334,7 +334,7 @@ header.scrolled {
 
 @media (min-width: 640px) {
     .hide-on-mobile {
-        display: inline;
+        display: block;
     }
 
     .hide-on-desktop {
@@ -365,8 +365,10 @@ header.scrolled {
     text-transform: uppercase;
 }
 
-.phone-contact {
-    color: var(--primary);
+.phone-contact,
+.footer-link {
+    color: var(--black);
+    text-decoration: none;
 }
 
 .footer-socials {
@@ -386,6 +388,14 @@ header.scrolled {
 .footer-bottom p {
     font-size: 13px;
 }
+
+.footer-policy {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
 
 @media (min-width: 768px) {
     .site-footer {
@@ -1686,7 +1696,7 @@ header.scrolled {
 
 
 .welcome-info-section {
-    padding-top: 150px;
+    /* padding-top: 150px; */
     position: relative;
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
@@ -1864,4 +1874,819 @@ header.scrolled {
 
 .event-button:hover {
     background: #4a5323;
+}
+
+/* Privacy Policy ------------------------ */
+
+.legal-section {
+    margin-top: 77px;
+    color: #333;
+    line-height: 1.7;
+}
+
+.legal-section h1 {
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+.legal-section h5 {
+    color: var(--black);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.legal-section a {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+.legal-section ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+
+
+/* BRIDE'S BOX ------------------------------- */
+
+.box-content-section {
+    background-color: var(--white);
+    color: #333;
+}
+
+.box-image {
+    width: 80%;
+    max-width: 320px;
+    border-radius: 12px;
+}
+
+.steps-box {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 35px 28px;
+    width: 340px;
+    text-align: left;
+}
+
+.steps-box h3 {
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1;
+    margin: 0;
+}
+
+.steps-box h3 strong {
+    font-size: 10vw;
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.steps-box .steps-sub {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.steps-box .steps-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.95;
+}
+
+
+.box-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box-left {
+    position: relative;
+}
+
+.box-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.box-item-first {
+    justify-content: center;
+    margin-top: -53px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+}
+
+.box-item .number {
+    font-size: 105px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--peach);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Cormorant', Courier, monospace;
+}
+
+.box-item p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.box-item strong {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 600;
+    color: #333;
+}
+
+
+@media (max-width: 991px) {
+    .steps-box {
+        width: 100%;
+        margin-top: -30px;
+    }
+
+    .box-item {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .box-item .number {
+        width: 60px;
+        height: 60px;
+    }
+
+    .box-list {
+        margin-bottom: 30px;
+    }
+
+    .box-item-first {
+        position: absolute;
+        top: 115px;
+        right: 35px;
+    }
+}
+
+
+
+/* images slider ------------------------------------ */
+
+.infinite-slider {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.slider-window {
+    overflow: hidden;
+    width: 80%;
+}
+
+.slider-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+}
+
+.slide {
+    flex: 0 0 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.05);
+}
+
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s;
+}
+
+.slider-btn:hover {
+    color: #4a5323;
+}
+
+.slider-btn.prev {
+    left: 20px;
+}
+
+.slider-btn.next {
+    right: 20px;
+}
+
+
+@media (max-width: 991px) {
+    .slider-track {
+        gap: 0px;
+    }
+
+    .slide {
+        flex: 0 0 50%;
+    }
+}
+
+
+
+/* Gifts --------------------- */
+
+.gifts-section {
+    font-family: 'Montserrat', sans-serif;
+    width: fit-content;
+}
+
+.gifts-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border: 3px solid var(--primary);
+    border-radius: 12px;
+    padding: 0 20px;
+    background-color: var(--white);
+}
+
+.gifts-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.gifts-content {
+    flex: 1;
+}
+
+.gifts-content h3 {
+    color: var(--primary);
+    margin-bottom: 35px;
+    font-size: 22px;
+}
+
+.gifts-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gifts-content ul li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+    padding-left: 25px;
+}
+
+.gifts-content ul li::before,
+.perfect-box-text li::before {
+    content: '•';
+    color: var(--primary);
+    font-size: 45px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 0.4;
+}
+
+
+@media (max-width: 768px) {
+    .gifts-section {
+        max-width: none;
+    }
+
+    .gifts-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 10px;
+    }
+
+    .gifts-content {
+        text-align: start;
+    }
+}
+
+
+.advantages-section {
+    background-color: #f9f9f5;
+    padding: 100px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.advantages-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.advantages-left,
+.advantages-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.advantage-item {
+    position: relative;
+    max-width: 400px;
+    padding-top: 25px;
+    border-top: 1.5px solid var(--primary);
+}
+
+.advantage-item h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+}
+
+.advantage-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 75%;
+}
+
+.dot {
+    position: absolute;
+    top: -5px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+.dot.left {
+    left: 0;
+}
+
+.dot.right {
+    right: 0
+}
+
+.advantages-image {
+    flex: 0 0 534px;
+    text-align: center;
+}
+
+.advantages-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+@media (max-width: 992px) {
+    .advantages-section {
+        padding: 50px 0;
+    }
+
+    .advantages-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advantages-left,
+    .advantages-right {
+        align-items: center;
+        gap: 15px;
+    }
+
+    .dot.left {
+        left: 0;
+    }
+
+    .dot.right {
+        left: 0;
+    }
+
+    .advantages-image {
+        order: -1;
+        flex: auto;
+    }
+
+    .advantage-item {
+        max-width: 100%;
+        border-top: 1.5px solid var(--primary);
+    }
+
+    .advantage-item p {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+.perfect-box-section {
+    padding: 80px 0;
+    padding-bottom: 0;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.perfect-box-banner {
+    background-image: url(/images/products/bride-box/medium-shot-woman-wearing-ring.png);
+    background-size: contain;
+    background-position: center;
+    border-radius: 12px;
+    min-height: 350px;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.perfect-box-text {
+    text-align: left;
+    position: absolute;
+    right: 60px;
+    left: 50%;
+    top: 30%;
+}
+
+.perfect-box-text ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.perfect-box-text li {
+    color: var(--white);
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.perfect-box-text li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-size: 22px;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .perfect-box-banner {
+        background-image: url(/images/products/bride-box/vellee-events-bride-box-for-who-banner-mobile.png);
+        background-position: center top;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        min-height: auto;
+        max-height: 510px;
+        height: auto;
+    }
+
+    .perfect-box-text {
+        position: unset;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .perfect-box-text li {
+        font-size: 17px;
+    }
+}
+
+
+.why-box-section {
+    background-color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+.why-box-columns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    max-width: 910px;
+    margin: 0 auto;
+}
+
+.why-box-col {
+    flex: 1;
+    font-size: 15.5px;
+}
+
+.highlight-box {
+    background: var(--secondary);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-top: 25px;
+}
+
+.highlight-box-next {
+    background: var(--secondary);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.highlight-box-next p {
+    margin-bottom: 0;
+}
+
+.why-box-content strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.final-text {
+    margin-top: 25px;
+    color: var(--primary);
+
+}
+
+@media (max-width: 992px) {
+    .why-box-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .why-box-col {
+        font-size: 14.5px;
+    }
+
+    .why-box-section h2 {
+        font-size: 22px;
+    }
+}
+
+
+.banner-cta-section {
+    background-image: url(/images/products/bride-box/vellee-events-bride-box-banner-desktop-12.png);
+    background-size: contain;
+    background-position: center;
+    border-radius: 12px;
+    min-height: 550px;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+
+@media (max-width: 992px) {
+    .banner-cta-section {
+        background-image: url(/images/products/bride-box/vellee-events-bride-box-banner-mobile-12.png);
+        background-size: cover;
+        min-height: 747px;
+        height: auto;
+    }
+}
+
+
+.reviews-section {
+    background: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+.reviews-swiper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.review-card {
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.review-content {
+    padding: 15px 18px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 290px;
+}
+
+.review-content h5 {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 15.5px;
+    margin-bottom: 3px;
+}
+
+.review-content .stars {
+    color: #f5c044;
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.review-content p {
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.review-content small {
+    color: #9a9a9a;
+    font-size: 13px;
+}
+
+/* Swiper buttons & pagination */
+.swiper-button-prevv,
+.swiper-button-nextt {
+    color: var(--primary);
+    top: 45%;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    position: absolute;
+    border-radius: 50%;
+    transition: color 0.3s ease;
+}
+
+.swiper-button-prevv:hover,
+.swiper-button-nextt:hover {
+    color: #4a5323;
+}
+
+.swiper-button-prevv {
+    left: -50px;
+}
+
+.swiper-button-nextt {
+    right: -50px;
+}
+
+.swiper-paginationn {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.swiper-paginationn .swiper-pagination-bullet {
+    opacity: 0.2 !important;
+    background: var(--primary) !important;
+}
+
+.swiper-paginationn .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .reviews-swiper {
+        max-width: 90%;
+    }
+
+    .review-card {
+        height: auto;
+    }
+
+    .review-card img {
+        height: 200px;
+    }
+}
+
+
+.gallery-section {
+    background-color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+.gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 1 1 calc(20% - 20px);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ❤️ Custom SVG heart */
+.heart-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+  z-index: 2;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.heart-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-item:hover .heart-icon {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+/* Optional: fill heart on hover */
+.gallery-item .heart-icon:hover path {
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+@media (max-width: 992px) {
+    .gallery-item {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%;
+    }
 }

@@ -22,6 +22,19 @@ app.get('/', (req, res) => {
 });
 
 
+// Privacy policy Page
+app.get('/privacy-policy', (req, res) => {
+  res.render('layout', { title: 'Privacy policy', content: 'privacy-policy' });
+});
+
+
+// Terms of use Page
+app.get('/terms-of-use', (req, res) => {
+  res.render('layout', { title: 'Terms-of-use', content: 'terms-of-use' });
+});
+
+
+
 // Pricing page
 app.get('/pricing', (req, res) => {
   res.render('layout', { title: 'Pricing', content: 'pricing' });
@@ -84,6 +97,17 @@ app.get('/product/welcome-table', (req, res) => {
 });
 
 
+// Product page - Wedding Newspapper
+app.get('/product/newspapper', (req, res) => {
+  res.render('layout', { title: 'Wedding newspapper', content: 'product/pp-wedding-newspapper' });
+});
+
+// Product page - Bride's box
+app.get('/product/bride-box', (req, res) => {
+  res.render('layout', { title: 'Bride box', content: 'product/pp-bride-box' });
+});
+
+
 // Product main page (optional)
 app.get('/product', (req, res) => {
   res.render('layout', { title: 'Welcome table', content: 'product/pp-welcome-table' });
@@ -98,6 +122,15 @@ app.get('/product/*', (req, res) => {
 // Shop page
 app.get('/shop', (req, res) => {
   const products = [
+    {
+      title: 'Кутията на булката',
+      description: 'Цяла сватбена агенция в една кутия',
+      production: 'Срок на изработка 25 работни дни',
+      price: '94,99 лв.',
+      image: 'images/shop/vellee-shop-14.png',
+      link: '/product/bride-box',
+      button: 'Прочетете повече'
+    },
     {
       title: 'Welcome КУТИЯ',
       description: 'Персонализирана Welcome кутия от пенокартон.',
@@ -202,8 +235,8 @@ app.get('/shop', (req, res) => {
       description: 'Персонализиран вестник за вашето събитие.',
       production: 'Срок на изработка 12 работни дни',
       price: '2 лв./ 1.02 € / бр. + еднократно 30 лв./15.34 €/ за дизайн',
-      image: 'images/shop/vellee-shop-12.png',
-      link: 'javascript:void(0)',
+      image: 'images/shop/vellee-shop-13.png',
+      link: '/product/newspapper',
       button: 'Изпратете запитване'
     },
     // {
