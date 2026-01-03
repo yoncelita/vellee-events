@@ -107,6 +107,11 @@ app.get('/product/bride-box', (req, res) => {
   res.render('layout', { title: 'Bride box', content: 'product/pp-bride-box' });
 });
 
+// Product page - Leksikon
+app.get('/product/leksikon', (req, res) => {
+  res.render('layout', { title: 'Leksikon', content: 'product/pp-leksikon' });
+});
+
 
 // Product main page (optional)
 app.get('/product', (req, res) => {
@@ -126,10 +131,11 @@ app.get('/shop', (req, res) => {
       title: 'Кутията на булката',
       description: 'Цяла сватбена агенция в една кутия',
       production: 'Срок на изработка 25 работни дни',
-      price: '94,99 лв.',
+      price: '84,99 лв./ 43.48 €',
       image: 'images/shop/vellee-shop-14.png',
       link: '/product/bride-box',
-      button: 'Прочетете повече'
+      button: 'Прочетете повече',
+      isTop: true
     },
     {
       title: 'Welcome КУТИЯ',
@@ -138,7 +144,8 @@ app.get('/shop', (req, res) => {
       price: '115 лв./58.80 €',
       image: 'images/shop/vellee-shop-1.png',
       link: '/product/welcome-box',
-      button: 'Прочетете повече'
+      button: 'Прочетете повече',
+      isTop: true
     },
     {
       title: 'Флорално Welcome табло',
@@ -238,6 +245,16 @@ app.get('/shop', (req, res) => {
       image: 'images/shop/vellee-shop-13.png',
       link: '/product/newspapper',
       button: 'Изпратете запитване'
+    },
+    {
+      title: 'Лексикон',
+      description: 'Подходящ за моминско парти, ергенско парти, рожден ден и др.',
+      production: 'Срок на изработка 12 работни дни',
+      price: '68 лв./ 34.79 €',
+      image: 'images/shop/vellee-shop-15.png',
+      link: '/product/leksikon',
+      button: 'Прочетете повече',
+      isTop: true
     },
     // {
     //   title: 'Изработка на сватбен сайт',

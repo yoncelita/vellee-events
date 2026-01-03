@@ -1696,7 +1696,6 @@ header.scrolled {
 
 
 .welcome-info-section {
-    /* padding-top: 150px; */
     position: relative;
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
@@ -1771,10 +1770,6 @@ header.scrolled {
 }
 
 @media (min-width: 768px) {
-    .welcome-info-section {
-        padding-top: 100px;
-    }
-
     .welcome-info-section .container .row {
         gap: 0;
     }
@@ -1815,6 +1810,23 @@ header.scrolled {
     cursor: pointer;
 }
 
+.shop-product-image {
+    position: relative;
+}
+
+.top-product-label {
+    position: absolute;
+    font-weight: normal;
+    top: 10px;
+    left: 10px;
+    padding: 5px 15px;
+    border-radius: 25px;
+    width: auto;
+    height: auto;
+    background-color: var(--peach);
+    color: var(--black);
+    font-size: 14px;
+}
 
 .shop-product-image img {
     width: 100%;
@@ -1860,6 +1872,14 @@ header.scrolled {
     min-height: 50px;
     height: 50px;
     margin-bottom: 15px;
+}
+
+.col-md-4:first-child .product-price::before {
+    content: "94,99 лв./ 48.57 €";
+    display: block;
+    font-size: 13px;
+    color: #949494;
+    text-decoration: line-through;
 }
 
 .event-button {
@@ -1935,6 +1955,14 @@ header.scrolled {
     font-weight: 700;
     font-size: 28px;
     line-height: 1;
+    margin: 0;
+}
+
+.steps-box h3 span {
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: 45px;
+    /* line-height: 1; */
     margin: 0;
 }
 
@@ -2206,7 +2234,7 @@ header.scrolled {
 
 
 .advantages-section {
-    background-color: #f9f9f5;
+    background-color: #e2e5db;
     padding: 100px 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -2647,30 +2675,30 @@ header.scrolled {
 
 /* ❤️ Custom SVG heart */
 .heart-icon {
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  width: 24px;
-  height: 24px;
-  opacity: 0.9;
-  z-index: 2;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.9;
+    z-index: 2;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .heart-icon svg {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .gallery-item:hover .heart-icon {
-  transform: scale(1.15);
-  opacity: 1;
+    transform: scale(1.15);
+    opacity: 1;
 }
 
 /* Optional: fill heart on hover */
 .gallery-item .heart-icon:hover path {
-  fill: white;
-  transition: fill 0.3s ease;
+    fill: white;
+    transition: fill 0.3s ease;
 }
 
 @media (max-width: 992px) {

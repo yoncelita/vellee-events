@@ -8,6 +8,9 @@
               <a href="<%= product.link %>">
                 <img src="<%= product.image %>" alt="<%= product.title %>">
               </a>
+              <% if (product.isTop) { %>
+                <h6 class="top-product-label">ТОП ПРОДУКТ</h6>
+                <% } %>
             </div>
             <div class="product-body">
               <h5 class="product-title font-cormorant">
