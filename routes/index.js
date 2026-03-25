@@ -3,43 +3,29 @@ const router = express.Router();
 
 
 // Home page
-router.get('/', (req, res) => {
-    res.render('layout', { title: 'Home', content: 'home' });
-});
+// router.get('/', (req, res) => {
+//     res.render('layout', { title: 'Vellee Events Studio', content: 'home' });
+// });
 
-// Facilities & Services page
-router.get('/facilities', (req, res) => {
-    res.render('layout', { title: 'Facilities', content: 'facilities' });
-});
 
-// Gallery
-router.get('/gallery', (req, res) => {
-    res.render('layout', { title: 'Gallery', content: 'gallery' });
-});
+// // Contact page
+// router.get('/contact', (req, res) => {
+//     res.render('layout', { title: 'Contact', content: 'contact' });
+// });
 
-// Courchevel
-router.get('/courchevel', (req, res) => {
-    res.render('layout', { title: 'Courchevel', content: 'courchevel' });
-});
+// // Thank you page
+// router.post('/contact', (req, res) => {
+//     res.redirect('/thank-you');
+// });
 
-// Availability
-router.get('/availability', (req, res) => {
-    res.render('layout', { title: 'Availability', content: 'availability' });
-});
+// router.get('/thank-you', (req, res) => {
+//     res.render('layout', { title: 'Thank You', content: 'thank-you' });
+// });
 
-// Contact page
-router.get('/contact', (req, res) => {
-    res.render('layout', { title: 'Contact', content: 'contact' });
-});
-
-// Thank you page
-router.post('/contact', (req, res) => {
-    res.redirect('/thank-you');
-});
-
-router.get('/thank-you', (req, res) => {
-    res.render('layout', { title: 'Thank You', content: 'thank-you' });
-});
+// // Prices page
+// router.get('/pricing', (req, res) => {
+//     res.render('layout', { title: 'Pricing', content: 'pricing' });
+// });
 
 
 // TODO: 404 page

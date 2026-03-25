@@ -6,6 +6,26 @@
     --black: #000000;
 }
 
+body {
+    /* opacity: 0; */
+    transition: opacity 0.2s ease;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.top-bar-line {
+    background-color: var(--primary);
+    height: 27px;
+    width: 100%;
+    color: var(--white);
+    text-align: center;
+    font-size: 13px;
+    display: grid;
+    place-items: center;
+}
+
 header.transparent {
     background-color: transparent;
     transition: background-color 0.3s ease;
@@ -30,6 +50,10 @@ h2 {
     color: var(--secondary) !important;
 }
 
+.text-bold {
+    font-weight: bold;
+}
+
 html,
 body {
     height: 100%;
@@ -39,12 +63,12 @@ body {
     min-height: 100vh;
 }
 
-.font-poiret {
-    font-family: 'Poiret One', sans-serif;
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.font-pattaya {
-    font-family: 'Pattaya', sans-serif;
+.font-cormorant {
+    font-family: 'Cormorant', sans-serif;
 }
 
 main {
@@ -76,10 +100,16 @@ main {
 }
 
 .nav-link {
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    transition: color 0.2s ease;
+}
 
+.nav-link.active {
+    font-weight: 900;
+    color: var(--primary) !important;
 }
 
 .navbar-toggler {
@@ -151,58 +181,87 @@ header.scrolled {
 
 /* Hero section ------- */
 .hero-section {
+    margin-top: 65px;
+}
+
+.image-hero-container {
     position: relative;
-    margin-top: 40px;
-    overflow: hidden;
-    background-color: #fff;
-    margin-top: 77px;
+    width: 100%;
+    height: 100%;
+}
+
+.image-hero-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--white);
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        position: relative;
+        margin-top: 40px;
+        overflow: hidden;
+        background-color: #fff;
+        margin-top: 77px;
+    }
 }
 
 .hero-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: auto;
+    width: 100%;
+    height: 615px;
+    position: relative;
+}
+
+.hero-section .swiper {
+    height: 100%;
 }
 
 @media (min-width: 768px) {
     .hero-wrapper {
-        flex-direction: row;
-        /* min-height: 600px; */
-        min-height: 490px;
-        height: 300px;
+        min-height: 640px;
+        height: 640px;
+        width: 100%;
     }
 }
 
 .hero-text {
-    width: 100%;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 0;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    width: 100%;
+}
+
+
+.hero-text-inner {
+    max-width: 100%;
 }
 
 @media (min-width: 768px) {
     .hero-text {
-        width: 50%;
-        justify-content: flex-center;
-        padding: 0;
+        width: auto;
     }
-}
 
-.hero-text-inner {
-    max-width: 640px;
-}
-
-@media (min-width: 768px) {
     .hero-text-inner {
         padding: 0;
     }
 }
 
 .hero-text h1 {
-    font-size: 2.1rem;
-    color: var(--black);
+    color: var(--white);
+    text-transform: uppercase;
     line-height: 1.2;
+    font-size: 26px;
+    width: 100%;
+    padding: 0 10px;
 }
 
 @media (min-width: 768px) {
@@ -213,15 +272,15 @@ header.scrolled {
 
 @media (min-width: 1024px) {
     .hero-text h1 {
-        font-size: 3rem;
+        font-size: 3.7rem;
     }
 }
 
 .hero-text p {
     margin-top: 1rem;
-    font-size: 1.125rem;
-    color: #4b5563;
-    /* Tailwind's gray-600 */
+    font-weight: 200;
+    color: var(--white);
+    font-size: 20px;
 }
 
 @media (min-width: 768px) {
@@ -269,9 +328,17 @@ header.scrolled {
     display: none;
 }
 
+.hide-on-desktop {
+    display: block;
+}
+
 @media (min-width: 640px) {
     .hide-on-mobile {
-        display: inline;
+        display: block;
+    }
+
+    .hide-on-desktop {
+        display: none;
     }
 }
 
@@ -294,6 +361,16 @@ header.scrolled {
     gap: 10px;
 }
 
+.footer-top-heading {
+    text-transform: uppercase;
+}
+
+.phone-contact,
+.footer-link {
+    color: var(--black);
+    text-decoration: none;
+}
+
 .footer-socials {
     display: flex;
     flex-direction: row;
@@ -311,6 +388,14 @@ header.scrolled {
 .footer-bottom p {
     font-size: 13px;
 }
+
+.footer-policy {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
 
 @media (min-width: 768px) {
     .site-footer {
@@ -359,7 +444,7 @@ header.scrolled {
 .welcome-content {
     position: relative;
     z-index: 1;
-    max-width: 1024px;
+    max-width: 947px;
     margin: 0 auto;
     text-align: center;
     color: #1f2937;
@@ -370,6 +455,7 @@ header.scrolled {
     margin-bottom: 24px;
     padding: 0 60px;
     width: 95%;
+    text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
@@ -409,7 +495,7 @@ header.scrolled {
 
 .welcome-content p {
     font-size: 1rem;
-    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
     line-height: 1.6;
     margin-bottom: 16px;
 }
@@ -423,13 +509,13 @@ header.scrolled {
 
 .welcome-content .emphasis {
     margin-top: 32px;
-    font-size: 20px;
-    line-height: 1;
+    font-size: 16px;
+    line-height: 1.3;
 }
 
 @media (min-width: 768px) {
     .welcome-content .emphasis {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -454,7 +540,7 @@ header.scrolled {
     color: #fff;
     padding: 15px;
     border-radius: 16px;
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: left;
     width: 100%;
     height: 245px;
@@ -464,7 +550,7 @@ header.scrolled {
 }
 
 .services-content h2 {
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #fff;
@@ -474,6 +560,11 @@ header.scrolled {
     margin-bottom: 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
+    font-family: "Montserrat", sans-serif;
+}
+
+.features-section .emphasis {
+    font-weight: 600;
 }
 
 .services-content .arrow {
@@ -485,7 +576,7 @@ header.scrolled {
 /* Desktop styles */
 @media (min-width: 768px) {
 
-    .services-section {
+    .pricing-services-section {
         padding: 60px 20px;
     }
 
@@ -535,12 +626,12 @@ header.scrolled {
 
 .feature-item {
     flex: 1 1 220px;
-    max-width: 250px;
-    width: 1280px;
+    /* max-width: 250px;
+    width: 1280px; */
     padding: 10px;
     margin-bottom: 16px;
     text-align: center;
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .feature-icon {
@@ -569,14 +660,16 @@ header.scrolled {
 .feature-item h3 {
     font-size: 1.25rem;
     margin-bottom: 12px;
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     color: #222;
+    text-transform: uppercase;
 }
 
 .feature-item p {
     font-size: 0.85rem;
     line-height: 1.2;
     color: black;
+    font-weight: 300;
 }
 
 @media (min-width: 768px) {
@@ -600,13 +693,62 @@ header.scrolled {
     padding: 20px;
 }
 
-.att-break-first {
-    background-image: url('/images/parallax.jpg');
-    height: 370px;
+@media (min-width: 768px) {
+
+    .att-break-first-parallax {
+        background-image: url('/images/vellee-paralax-1.jpg');
+        height: 370px;
+        background-attachment: fixed;
+        /* makes it parallax */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+
+    .att-break-second-parallax {
+        background-image: url('/images/vellee-paralax-2.jpg');
+        min-height: 370px;
+        background-attachment: fixed;
+        /* makes it parallax */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+
+    .att-break-first-parallax,
+    .att-break-second-parallax {
+        background-attachment: unset;
+        background-image: url('/images/vellee-paralax-1.jpg');
+        height: 370px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .att-break-first-parallax,
+    .att-break-second-parallax {
+        background-attachment: unset;
+        background-image: url('/images/vellee-paralax-1.jpg');
+        height: 370px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
 }
 
 .att-break-second {
-    background-image: url('/images/grid-mobile.jpg');
+    background-image: url('/images/velle-grid-mobile.png');
     height: 370px;
     margin-top: 22px;
 }
@@ -619,8 +761,9 @@ header.scrolled {
 
 
 @media (min-width: 768px) {
+
     .att-break-second {
-        background-image: url('/images/index-grid-desktop.jpg');
+        background-image: url('/images/vellee-index-grid-desktop.png');
         height: 375px;
     }
 
@@ -636,11 +779,15 @@ header.scrolled {
 
 /* Event variants ----------- */
 
+.events {
+    background-color: var(--primary);
+}
+
 .event-types {
-    padding: 90px 20px;
+    padding: 30px 15px;
     max-width: 1200px;
     margin: 0 auto;
-    font-family: 'PoiretOne', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .section-header {
@@ -649,14 +796,16 @@ header.scrolled {
 }
 
 .section-header h2 {
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     /* font-size: 32px; */
     margin-bottom: 30px;
+    text-transform: uppercase;
+    color: var(--white);
 }
 
 .section-header p {
     font-size: 16px;
-    color: #333;
+    color: var(--white);
     max-width: 700px;
     margin: 0 auto;
 }
@@ -671,12 +820,14 @@ header.scrolled {
 
 
 .event-card {
-    background: var(--secondary);
+    background: var(--white);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s;
+    padding: 9px;
+    gap: 15px;
 }
 
 .event-card:hover {
@@ -687,21 +838,22 @@ header.scrolled {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .card-content {
-    padding: 20px;
+    padding: 0;
     text-align: center;
 }
 
 .card-content h3 {
-    font-family: 'Pattaya', sans-serif;
-    font-size: 20px;
-    width: 65%;
+    font-family: 'Cormorant', sans-serif;
+    font-size: 15px;
+    /* width: 65%; */
     border-bottom: 1px solid var(--primary);
     margin: 0 auto;
+    text-transform: uppercase;
     padding-bottom: 10px;
-
 }
 
 .card-content p {
@@ -729,14 +881,111 @@ header.scrolled {
 
 }
 
+.white-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 12px 40px;
+    font-size: 17px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: background-color 0.3s;
+}
+
+.white-button:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
 .event-button:hover {
     background-color: #819455;
 }
 
-
 @media (min-width: 768px) {
+    .event-types {
+        padding: 90px 20px;
+    }
+
     .card-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+    }
+}
+
+
+
+/* Process section ---------- */
+
+.process-section {
+    position: relative;
+    background-color: var(--secondary);
+    overflow: hidden;
+    padding: 50px 20px;
+}
+
+.process-section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.step-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    font-size: 11rem;
+    font-weight: bold;
+    color: var(--primary);
+    font-family: 'Cormorant', serif;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+
+.step-number::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    background-color: var(--primary);
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.step:first-child .step-number::after {
+    content: none;
+}
+
+@media (min-width: 768px) {
+
+    .step:first-child .step-number::after,
+    .step-number::after {
+        content: "";
+        position: absolute;
+        width: 270px;
+        height: 1px;
+        background-color: var(--primary);
+        top: 50%;
+        left: 85px;
+        transform: translateY(-50%);
+    }
+
+    .step:last-child .step-number::after {
+        content: none;
     }
 }
 
@@ -745,21 +994,22 @@ header.scrolled {
 /* Reviews ---------- */
 
 .testimonials-section {
-    background-color: var(--peach);
+    background-color: var(--white);
     padding: 60px 20px;
     text-align: center;
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .testimonials-header h2 {
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     /* font-size: 32px; */
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .testimonials-header p {
     font-size: 16px;
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto 40px;
 }
 
@@ -789,9 +1039,7 @@ header.scrolled {
 .image-container img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     object-fit: cover;
-    background: var(--white);
 }
 
 .image-container::after {
@@ -809,14 +1057,14 @@ header.scrolled {
 
 .testimonial-card h3 {
     margin-top: 10px;
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     font-size: 16px;
     color: #939393;
 }
 
 .testimonial-card p {
     margin-top: 5px;
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     line-height: 1.3;
     color: var(--primary);
@@ -833,8 +1081,8 @@ header.scrolled {
 .date {
     margin-top: 10px;
     font-size: 13px;
-    color: #ccc;
-    font-weight: 900;
+    /* color: #ccc;
+    font-weight: 900; */
 }
 
 
@@ -893,7 +1141,7 @@ header.scrolled {
     background-color: white;
     text-align: center;
     padding: 60px 20px;
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .quote-inner {
@@ -907,10 +1155,11 @@ header.scrolled {
 }
 
 .quote-text {
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     font-size: 32px;
     color: var(--primary);
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 .quote-signature {
@@ -934,7 +1183,7 @@ header.scrolled {
 }
 
 .brand-name {
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     font-size: 24px;
 }
 
@@ -956,7 +1205,7 @@ header.scrolled {
     position: absolute;
     background-color: var(--primary);
     color: white;
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     padding: 14px 32px;
     border-radius: 10px;
@@ -1039,7 +1288,7 @@ header.scrolled {
     padding: 0;
     background-color: var(--secondary);
     color: #5c3c32;
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1055,7 +1304,7 @@ header.scrolled {
 .error-heading {
     font-size: 120px;
     margin: 0;
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     color: var(--primary);
 }
 
@@ -1086,13 +1335,13 @@ header.scrolled {
 
 .contact-section {
     background-color: var(--white);
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-top: 77px;
 }
 
 .contact-title {
     font-size: 36px;
-    font-family: 'Pattaya', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     color: var(--primary);
 }
 
@@ -1103,15 +1352,15 @@ header.scrolled {
 
 #contactForm .form-control {
     border: 1px solid var(--primary);
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn-contact {
-     display: inline-block;
+    display: inline-block;
     background-color: var(--primary);
     color: #fff;
     padding: 12px 40px;
-    font-size: 17px;
+    font-size: 16px;
     border-radius: 15px;
     text-decoration: none;
     font-weight: 300;
@@ -1126,14 +1375,1349 @@ header.scrolled {
 
 
 .thank-you-section {
-  color: var(--primary);
-   margin-top: 77px;
+    color: var(--primary);
+    margin-top: 77px;
 }
 
 .thank-you-section .btn-contact {
-  background-color: var(--primary);
-  color: white;
-  border-radius: 30px;
-  padding: 10px 30px;
-  text-decoration: none;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 30px;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+
+/* Pricing Page --------------------------------------------------- */
+
+.pricing-section:first-child {
+    background-color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 77px;
+}
+
+.pricing-section {
+    margin: 20px 0;
+}
+
+.pricing-section hr {
+    margin: 0 !important;
+}
+
+.pricing-section>.inner-wrapper>h5 {
+    color: #333;
+    font-size: 16px;
+}
+
+.pricing-section>.inner-wrapper>h2 {
+    margin-bottom: 24px;
+    width: 65%;
+    text-transform: uppercase;
+}
+
+#beMineSection img,
+#brideSection img,
+#velleeSection img {
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+
+.pricing-section .price-box {
+    background: var(--peach);
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    color: #333;
+}
+
+.pricing-section .price {
+    color: #000;
+    font-weight: 600;
+}
+
+.pricing-section .note {
+    color: #555;
+    max-width: 600px;
+    line-height: 1.5;
+    font-size: 13px;
+    margin-bottom: 50px;
+}
+
+
+@media (min-width: 1280px) {
+
+    .pricing-section {
+        margin: 50px 0;
+    }
+
+    .pricing-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+
+    .pricing-section .col-md-7,
+    .pricing-section .col-md-5 {
+        flex: 1;
+    }
+
+    .pricing-section.col-md-5 {
+        max-width: 40%;
+    }
+
+    .pricing-section .col-md-7 {
+        max-width: 55%;
+    }
+
+    .pricing-section>.inner-wrapper>h2 {
+        color: var(--primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .pricing-section>.inner-wrapper>h5 {
+        color: #333;
+        font-size: 1rem;
+    }
+
+    .pricing-section p {
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    #beMineSection img,
+    #brideSection img,
+    #velleeSection img img {
+        border-radius: 12px;
+        object-fit: cover;
+    }
+}
+
+
+.pricing-services-section {
+    background-color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+}
+
+.pricing-services-section>.inner-wrapper>h2 {
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 10px;
+    width: 85%;
+    text-align: center;
+    display: inline-block;
+}
+
+.pricing-services-section>p {
+    color: #333;
+    line-height: 1.6;
+    width: 85%;
+    text-align: center;
+    display: inline-block;
+}
+
+.services-list {
+    margin-top: 40px;
+    gap: 0;
+}
+
+.service-item {
+    display: flex;
+    transition: transform 0.2s ease;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item:hover {
+    transform: translateY(-4px);
+}
+
+.service-icon {
+    background-color: var(--peach);
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#additionalServices img {
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+.services-note {
+    margin-top: 50px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    color: #555;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.service-text>h5 {
+    font-size: 17px;
+}
+
+/* Desktop layout using min-width */
+@media (min-width: 768px) {
+    .service-item {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        text-align: left;
+        flex-direction: row;
+    }
+
+    .service-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+
+}
+
+
+/* Product pages ----------------------------------------------------------------- */
+
+.product-section {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin-top: 77px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.product-section .row {
+    gap: 1rem;
+}
+
+.product-info .custom-design {
+    color: var(--primary);
+}
+
+.product-gallery {
+    text-align: center;
+}
+
+.product-gallery .main-image {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.thumbnail-row {
+    display: flex;
+    /* justify-content: center; */
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.thumbnail-row .thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail-row .thumb:hover,
+.thumbnail-row .thumb.active {
+    opacity: 1;
+    border-color: var(--primary);
+}
+
+.product-info h3 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.product-info .price {
+    font-size: 20px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 5px;
+}
+
+.product-info .price .price-disclaimer {
+    font-size: 13px;
+    margin-top: 5px;
+    color: #555;
+}
+
+.event-button {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background 0.3s ease;
+}
+
+.event-button:hover {
+    background: #4a5323;
+}
+
+@media (min-width: 768px) {
+    .product-info {
+        height: 719px;
+    }
+    .product-section .col-md-6 {
+        flex: 1;
+    }
+}
+
+
+
+.welcome-info-section {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.welcome-info-section .container .row {
+    gap: 20px;
+}
+
+.welcome-bg {
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.welcome-bg-info {
+    margin-bottom: -80px;
+    justify-content: center;
+    display: flex;
+}
+
+.welcome-bg-img-info {
+    width: 100%;
+    object-fit: cover;
+}
+
+.info-card {
+    margin-bottom: 25px;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 12px;
+    padding: 40px 25px;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h4 {
+    font-family: 'Cormorant', serif;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+.info-card p {
+    font-size: 15px;
+    color: #f2f2f2;
+    line-height: 1.6;
+}
+
+.info-card .info-icon {
+    height: auto;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .welcome-info-section .container .row {
+        gap: 0;
+    }
+
+    .welcome-bg {
+
+        height: 300px;
+
+    }
+
+    .info-card {
+        margin: 15px 0;
+    }
+}
+
+
+
+/* Shop ------------------------------------------------------- */
+
+.shop-section {
+    background: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 77px;
+}
+
+.product-card:hover {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+    /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-5px);
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.shop-product-image {
+    position: relative;
+}
+
+.top-product-label {
+    position: absolute;
+    font-weight: normal;
+    top: 10px;
+    left: 10px;
+    padding: 5px 15px;
+    border-radius: 25px;
+    width: auto;
+    height: auto;
+    background-color: var(--peach);
+    color: var(--black);
+    font-size: 14px;
+}
+
+.shop-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-body {
+    padding: 20px;
+    padding-left: 0;
+    text-align: start;
+}
+
+.product-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.product-desc {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 43px;
+    height: 43px;
+    margin-bottom: 8px;
+}
+
+.product-production {
+    font-size: 13px;
+    color: #a7a7a7;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+    width: fit-content;
+    padding-bottom: 5px;
+}
+
+.product-price {
+    color: var(--primary);
+    font-weight: 600;
+    min-height: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.col-md-4:first-child .product-price::before {
+    content: "94,99 лв./ 48.57 €";
+    display: block;
+    font-size: 13px;
+    color: #949494;
+    text-decoration: line-through;
+}
+
+.event-button {
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.event-button:hover {
+    background: #4a5323;
+}
+
+/* Privacy Policy ------------------------ */
+
+.legal-section {
+    margin-top: 77px;
+    color: #333;
+    line-height: 1.7;
+}
+
+.legal-section h1 {
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+.legal-section h5 {
+    color: var(--black);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.legal-section a {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+.legal-section ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+
+
+/* BRIDE'S BOX ------------------------------- */
+
+.box-content-section {
+    background-color: var(--white);
+    color: #333;
+}
+
+.box-image {
+    width: 80%;
+    max-width: 320px;
+    border-radius: 12px;
+}
+
+.steps-box {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 35px 28px;
+    width: 340px;
+    text-align: left;
+}
+
+.steps-box h3 {
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1;
+    margin: 0;
+}
+
+.steps-box h3 span {
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: 45px;
+    /* line-height: 1; */
+    margin: 0;
+}
+
+.steps-box h3 strong {
+    font-size: 10vw;
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.steps-box .steps-sub {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.steps-box .steps-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.95;
+}
+
+
+.box-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box-left {
+    position: relative;
+}
+
+.box-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.box-item-first {
+    justify-content: center;
+    margin-top: -53px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+}
+
+.box-item .number {
+    font-size: 105px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--peach);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Cormorant', Courier, monospace;
+}
+
+.box-item p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.box-item strong {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 600;
+    color: #333;
+}
+
+
+@media (max-width: 991px) {
+    .steps-box {
+        width: 100%;
+        margin-top: -30px;
+    }
+
+    .box-item {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .box-item .number {
+        width: 60px;
+        height: 60px;
+    }
+
+    .box-list {
+        margin-bottom: 30px;
+    }
+
+    .box-item-first {
+        position: absolute;
+        top: 115px;
+        right: 35px;
+    }
+}
+
+
+
+/* images slider ------------------------------------ */
+
+.infinite-slider {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.slider-window {
+    overflow: hidden;
+    width: 80%;
+}
+
+.slider-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+}
+
+.slide {
+    flex: 0 0 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.05);
+}
+
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s;
+}
+
+.slider-btn:hover {
+    color: #4a5323;
+}
+
+.slider-btn.prev {
+    left: 20px;
+}
+
+.slider-btn.next {
+    right: 20px;
+}
+
+
+@media (max-width: 991px) {
+    .slider-track {
+        gap: 0px;
+    }
+
+    .slide {
+        flex: 0 0 50%;
+    }
+}
+
+
+
+/* Gifts --------------------- */
+
+.gifts-section {
+    font-family: 'Montserrat', sans-serif;
+    width: fit-content;
+}
+
+.gifts-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border: 3px solid var(--primary);
+    border-radius: 12px;
+    padding: 0 20px;
+    background-color: var(--white);
+}
+
+.gifts-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.gifts-content {
+    flex: 1;
+}
+
+.gifts-content h3 {
+    color: var(--primary);
+    margin-bottom: 35px;
+    font-size: 22px;
+}
+
+.gifts-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gifts-content ul li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+    padding-left: 25px;
+}
+
+.gifts-content ul li::before,
+.perfect-box-text li::before {
+    content: '•';
+    color: var(--primary);
+    font-size: 45px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 0.4;
+}
+
+
+@media (max-width: 768px) {
+    .gifts-section {
+        max-width: none;
+    }
+
+    .gifts-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 10px;
+    }
+
+    .gifts-content {
+        text-align: start;
+    }
+}
+
+
+.advantages-section {
+    background-color: #e2e5db;
+    padding: 100px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.advantages-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.advantages-left,
+.advantages-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.advantage-item {
+    position: relative;
+    max-width: 400px;
+    padding-top: 25px;
+    border-top: 1.5px solid var(--primary);
+}
+
+.advantage-item h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+}
+
+.advantage-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 75%;
+}
+
+.dot {
+    position: absolute;
+    top: -5px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+.dot.left {
+    left: 0;
+}
+
+.dot.right {
+    right: 0
+}
+
+.advantages-image {
+    flex: 0 0 534px;
+    text-align: center;
+}
+
+.advantages-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+@media (max-width: 992px) {
+    .advantages-section {
+        padding: 50px 0;
+    }
+
+    .advantages-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advantages-left,
+    .advantages-right {
+        align-items: center;
+        gap: 15px;
+    }
+
+    .dot.left {
+        left: 0;
+    }
+
+    .dot.right {
+        left: 0;
+    }
+
+    .advantages-image {
+        order: -1;
+        flex: auto;
+    }
+
+    .advantage-item {
+        max-width: 100%;
+        border-top: 1.5px solid var(--primary);
+    }
+
+    .advantage-item p {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+.perfect-box-section {
+    padding: 80px 0;
+    padding-bottom: 0;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.perfect-box-banner {
+    background-image: url(/images/products/bride-box/medium-shot-woman-wearing-ring.png);
+    background-size: contain;
+    background-position: center;
+    border-radius: 12px;
+    min-height: 350px;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.perfect-box-text {
+    text-align: left;
+    position: absolute;
+    right: 60px;
+    left: 50%;
+    top: 30%;
+}
+
+.perfect-box-text ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.perfect-box-text li {
+    color: var(--white);
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.perfect-box-text li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-size: 22px;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .perfect-box-banner {
+        background-image: url(/images/products/bride-box/vellee-events-bride-box-for-who-banner-mobile.png);
+        background-position: center top;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        min-height: auto;
+        max-height: 510px;
+        height: auto;
+    }
+
+    .perfect-box-text {
+        position: unset;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .perfect-box-text li {
+        font-size: 17px;
+    }
+}
+
+
+.why-box-section {
+    background-color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+.why-box-columns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    max-width: 910px;
+    margin: 0 auto;
+}
+
+.why-box-col {
+    flex: 1;
+    font-size: 15.5px;
+}
+
+.highlight-box {
+    background: var(--secondary);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-top: 25px;
+}
+
+.highlight-box-next {
+    background: var(--secondary);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.highlight-box-next p {
+    margin-bottom: 0;
+}
+
+.why-box-content strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.final-text {
+    margin-top: 25px;
+    color: var(--primary);
+
+}
+
+@media (max-width: 992px) {
+    .why-box-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .why-box-col {
+        font-size: 14.5px;
+    }
+
+    .why-box-section h2 {
+        font-size: 22px;
+    }
+}
+
+
+.banner-cta-section {
+    background-image: url(/images/products/bride-box/vellee-events-bride-box-banner-desktop-12.png);
+    background-size: contain;
+    background-position: center;
+    border-radius: 12px;
+    min-height: 550px;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+
+@media (max-width: 992px) {
+    .banner-cta-section {
+        background-image: url(/images/products/bride-box/vellee-events-bride-box-banner-mobile-12.png);
+        background-size: cover;
+        min-height: 747px;
+        height: auto;
+    }
+}
+
+
+.reviews-section {
+    background: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+.reviews-swiper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.review-card {
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.review-content {
+    padding: 15px 18px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 290px;
+}
+
+.review-content h5 {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 15.5px;
+    margin-bottom: 3px;
+}
+
+.review-content .stars {
+    color: #f5c044;
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.review-content p {
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.review-content small {
+    color: #9a9a9a;
+    font-size: 13px;
+}
+
+/* Swiper buttons & pagination */
+.swiper-button-prevv,
+.swiper-button-nextt {
+    color: var(--primary);
+    top: 45%;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    position: absolute;
+    border-radius: 50%;
+    transition: color 0.3s ease;
+}
+
+.swiper-button-prevv:hover,
+.swiper-button-nextt:hover {
+    color: #4a5323;
+}
+
+.swiper-button-prevv {
+    left: -50px;
+}
+
+.swiper-button-nextt {
+    right: -50px;
+}
+
+.swiper-paginationn {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.swiper-paginationn .swiper-pagination-bullet {
+    opacity: 0.2 !important;
+    background: var(--primary) !important;
+}
+
+.swiper-paginationn .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .reviews-swiper {
+        max-width: 90%;
+    }
+
+    .review-card {
+        height: auto;
+    }
+
+    .review-card img {
+        height: 200px;
+    }
+}
+
+
+.gallery-section {
+    background-color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+.gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 1 1 calc(20% - 20px);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ❤️ Custom SVG heart */
+.heart-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.9;
+    z-index: 2;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.heart-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-item:hover .heart-icon {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+/* Optional: fill heart on hover */
+.gallery-item .heart-icon:hover path {
+    fill: white;
+    transition: fill 0.3s ease;
+}
+
+@media (max-width: 992px) {
+    .gallery-item {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%;
+    }
 }

@@ -2,16 +2,23 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2 class="contact-title font-pattaya mb-3">Свържете се с нас</h2>
+        <h2 class="contact-title font-cormorant mb-3">Свържете се с нас</h2>
         <p class="font-poiret mb-5">
           Ако желаете да получите информация относно наличност и цени, моля попълнете формата по-долу.
         </p>
 
         <form id="contactForm" action="/contact" method="POST" class="text-start">
           <div class="mb-4">
-            <label for="name" class="form-label font-poiret">Име:</label>
-            <input type="text" class="form-control rounded-3" id="name" name="name" required>
-            <small id="nameError" class="text-danger d-none">Моля въведете валидно име (само букви).</small>
+            <% if (typeof subject !=='undefined' && subject) { %>
+              <div class="mb-4">
+                <label for="subject" class="form-label font-poiret">Относно:</label>
+                <input type="text" id="subject" name="subject" class="form-control rounded-3" value="<%= subject %>"
+                  readonly style="background-color: #f8f8f8; color: #555;">
+              </div>
+              <% } %>
+                <label for="name" class="form-label font-poiret">Име:</label>
+                <input type="text" class="form-control rounded-3" id="name" name="name" required>
+                <small id="nameError" class="text-danger d-none">Моля въведете валидно име (само букви).</small>
           </div>
           <div class="mb-4">
             <label for="email" class="form-label font-poiret">Имейл:</label>
