@@ -1606,7 +1606,7 @@ header.scrolled {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 719px;
+    height: fit-content;
 }
 
 .product-section .row {
@@ -1688,6 +1688,9 @@ header.scrolled {
 }
 
 @media (min-width: 768px) {
+    .product-info {
+        height: 719px;
+    }
     .product-section .col-md-6 {
         flex: 1;
     }
